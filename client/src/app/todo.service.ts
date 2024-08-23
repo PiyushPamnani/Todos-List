@@ -7,7 +7,7 @@ import { Todos } from './Todos';
   providedIn: 'root'
 })
 export class TodoService {
-  private baseUrl = 'http://localhost:5000';
+  private baseUrl = 'https://todos-list-0kdo.onrender.com';
 
   constructor(private http: HttpClient) { }
 

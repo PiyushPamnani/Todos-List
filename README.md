@@ -13,3 +13,5 @@
 - **Angular**
 - **Node.js**
 - **Bootstrap**
+
+> **Note**: The server is deployed on Render, so please be patient when signing in for the first time. If you encounter issues, try refreshing the page after a short wait 😅.

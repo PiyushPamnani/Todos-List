@@ -1,0 +1,28 @@
+<div class="card" style="width: 20rem">
+  <div class="form-group card-header" style="background-color: #e3f2fd">
+    <input
+      type="checkbox"
+      class="form-check-input mx-1"
+      id="todo{{ i }}"
+      (click)="onCheckBox(todo)"
+      [checked]="!todo.active"
+    />
+    <label class="form-check-label" for="todo{{ i }}">Done</label>
+  </div>
+  <div class="card-body">
+    <h5 [ngClass]="{ strike: !todo.active }" class="card-title display-5">
+      {{ todo.title }}
+    </h5>
+    <p [ngClass]="{ strike: !todo.active }" class="card-text lead">
+      <em>{{ todo.desc }}</em>
+    </p>
+    <button
+      class="btn btn-success mx-2"
+      (click)="onEdit(todo)"
+      *ngIf="todo.active"
+    >
+      Edit
+    </button>
+    <button class="btn btn-danger" (click)="onDelete(todo)">Delete</button>
+  </div>
+</div>

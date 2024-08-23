@@ -1,0 +1,38 @@
+<nav class="navbar bg-primary" data-bs-theme="dark">
+  <div class="container container-fluid" *ngIf="user; else elseBlock">
+    <a class="navbar-brand" href="#">
+      <img
+        [src]="user.picture"
+        alt="Logo"
+        width="35"
+        height="35"
+        class="d-inline-block align-text-top mx-2"
+      />
+      <span class="lead">Welcome, {{ user.name }}!</span>
+    </a>
+    <button class="btn btn-success mx-3" type="button" (click)="signOut()">
+      Sign Out
+    </button>
+  </div>
+  <ng-template #elseBlock class="container-fluid">
+    <div
+      id="g_id_onload"
+      [attr.data-client_id]="clientId"
+      data-context="signin"
+      data-ux_mode="popup"
+      data-callback="onSignIn"
+      data-auto_prompt="false"
+    ></div>
+
+    <div
+      class="g_id_signin"
+      data-type="standard"
+      data-shape="rectangular"
+      data-theme="outline"
+      data-text="signin_with"
+      data-size="large"
+      data-logo_alignment="left"
+    ></div>
+  </ng-template>
+</nav>
+<app-todos></app-todos>

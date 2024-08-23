@@ -1,0 +1,5 @@
+.strike {
+  text-decoration: line-through;
+  cursor: no-drop;
+  user-select: none;
+}

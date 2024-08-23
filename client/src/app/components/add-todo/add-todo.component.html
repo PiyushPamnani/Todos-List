@@ -1,0 +1,39 @@
+<form (ngSubmit)="onSubmit()" class="mb-3">
+  <div class="mb-2">
+    <label for="title" class="form-label">Add Title</label>
+    <input
+      type="text"
+      [(ngModel)]="title"
+      name="title"
+      id="title"
+      class="form-control"
+      [ngClass]="{ 'is-invalid': !isFilled && !title }"
+    />
+    <figcaption
+      class="blockquote-footer my-0 text-danger"
+      *ngIf="!isFilled && !title"
+    >
+      Title is required
+    </figcaption>
+  </div>
+  <div>
+    <label for="desc" class="form-label">Add Description</label>
+    <input
+      type="text"
+      [(ngModel)]="desc"
+      name="desc"
+      id="desc"
+      class="form-control"
+      [ngClass]="{ 'is-invalid': !isFilled && !desc }"
+    />
+    <figcaption
+      class="blockquote-footer my-0 text-danger"
+      *ngIf="!isFilled && !desc"
+    >
+      Description is required
+    </figcaption>
+  </div>
+  <button type="submit" class="btn btn-primary my-2">
+    {{ id >= 0 ? "Update Todo" : "Add Todo" }}
+  </button>
+</form>

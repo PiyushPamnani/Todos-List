@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="my-4">
+    <h2 class="display-2">
+      Todos List
+      <small class="text-body-secondary">Using Angular</small>
+    </h2>
+  </div>
+  <div *ngIf="!userEmail; else loginBlock" class="display-6 my-5">
+    Please <mark>Sign-In</mark> To Create Your Own List
+  </div>
+  <ng-template #loginBlock>
+    <div class="container">
+      <div>
+        <app-add-todo
+          (todoAdd)="addTodo($event)"
+          [title]="title"
+          [desc]="desc"
+          [id]="currentId"
+        ></app-add-todo>
+      </div>
+      <div>
+        <div *ngIf="this.todos.length === 0; else elseBlock" class="display-6">
+          No Todos To Display
+        </div>
+        <ng-template #elseBlock>
+          <div class="flex-container">
+            <div *ngFor="let todo of todos; index as i">
+              <app-todo-item
+                [todo]="todo"
+                [i]="i"
+                (todoEdit)="editTodo($event)"
+                (todoDelete)="deleteTodo($event)"
+                (todoCheckBox)="checkTodo($event)"
+              ></app-todo-item>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </ng-template>
+</div>

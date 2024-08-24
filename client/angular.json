@@ -25,6 +25,7 @@
           "options": {
             "outputPath": "dist/client",
             "baseHref": "/Todos-List/",
+            "deployUrl": "/Todos-List/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [

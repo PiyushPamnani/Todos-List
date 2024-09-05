@@ -7,7 +7,7 @@ import { Todos } from './Todos';
   providedIn: 'root'
 })
 export class TodoService {
-  private baseUrl = 'https://todos-list-0kdo.onrender.com';
+  private baseUrl = 'https://todos-backend-kappa.vercel.app';
 
   constructor(private http: HttpClient) { }
 
